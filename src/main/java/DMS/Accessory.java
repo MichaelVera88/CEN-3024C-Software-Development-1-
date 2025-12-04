@@ -72,8 +72,14 @@ public class Accessory
     public Map<String, Integer> getStats() {return stats;}
     public String getDescription() {return description;}
     public String getRequirements() {return requirements;}
-    public int getUpgrade() {return upgrade;}
+    public int getUpgrade() {return upgrade - 1;}
     public String getSource() {return source;}
     public int getMP() {return mp;}
     public int getPrice() {return price;}
+
+    @Override
+    public String toString()
+    {
+        return name;
+    }
 }

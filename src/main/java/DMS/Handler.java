@@ -21,7 +21,7 @@ public class Handler
             List<Accessory> accessories = loadData(textFile);
 
             Inventory playerInventory = new Inventory(accessoryList, accessories);
-            UI ui = new UI(playerInventory);
+            GUI gui = new GUI(playerInventory);
         } catch (IOException e)
         {
             System.err.println("Error reading file: " + e.getMessage());
