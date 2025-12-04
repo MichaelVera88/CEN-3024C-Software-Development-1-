@@ -1,0 +1,239 @@
+1
+Farming Talisman
+Speed
+10
+COMMON
+Increases your speed by +10 while held in the Farm, The Barn, Mushroom Desert, and Garden.
+N/A
+0
+Wheat Collection IV
+3
+25
+
+2
+Speed Talisman
+Speed
+1
+COMMON
+N/A
+N/A
+3
+Sugar Cane Collection II
+3
+110
+
+3
+Speed Ring
+Speed
+3
+UNCOMMON
+N/A
+N/A
+4
+Sugar Cane Collection V
+5
+18000
+
+4
+Speed Artifact
+Speed
+5
+RARE
+N/A
+N/A
+0
+Sugar Cane Collection VIII
+8
+1400000
+
+5
+Haste Ring
+Mining Speed
+10
+RARE
+Grants permanent Haste II.
+N/A
+6
+Cobblestone Collection VII
+8
+20500
+
+6
+Haste Artifact
+Mining Speed
+25
+EPIC
+Grants permanent Haste III.
+N/A
+0
+Cobblestone Collection IX
+12
+100000
+
+7
+Mine Affinity Talisman
+Speed
+25
+COMMON
+Grants +25 speed while on Mining Islands.
+N/A
+0
+Adventurer Shop Purchase
+3
+2500
+
+8
+Bat Talisman
+Health,Speed,Intelligence
+1,1,1
+RARE
+N/A
+N/A
+9
+Bat Mob Drop
+8
+1000000
+
+9
+Bat Ring
+Health,Speed,Intelligence
+3,2,2
+EPIC
+N/A
+N/A
+10
+Fear Mongerer Shop Purchase
+12
+5000000
+
+10
+Bat Artifact
+Health,Speed,Intelligence
+5,3,3
+LEGENDARY
+N/A
+N/A
+0
+Fear Mongerer Shop Purchase
+16
+10000000
+
+11
+Titanium Talisman
+Mining Speed
+15
+UNCOMMON
+N/A
+Heart of the Mountain Tier II
+12
+The Forge
+5
+51200
+
+12
+Titanium Ring
+Mining Speed
+30
+RARE
+N/A
+Heart of the Mountain Tier III
+13
+The Forge
+8
+200000
+
+13
+Titanium Artifact
+Mining Speed
+45
+EPIC
+N/A
+Heart of the Mountain Tier IV
+14
+The Forge
+12
+1000000
+
+14
+Titanium Relic
+Mining Speed
+60
+LEGENDARY
+N/A
+Heart of the Mountain Tier V
+0
+The Forge
+16
+7500000
+
+15
+Bat Person Artifact
+Strength,Defense,Intelligence
+10,10,10
+RARE
+Gain +10 Defense, Strength, and Intelligence for each bat that you have summoned. Works with Spirit Sceptre, Witch Mask, and the Bat Pet!
+N/A
+0
+Halloween Event
+8
+12000000
+
+16
+Blaze Talisman
+True Defense
+3
+RARE
+Reduces the damage taken from Infernal mobs by 5%.
+N/A
+0
+Millenia-Aged Blazes Drop
+8
+20000000
+
+17
+Fermento Artifact
+Farming Fortune
+30
+RARE
+N/A
+N/A
+0
+Garden Drop
+8
+22000000
+
+18
+Burststopper Artifact
+Strength,True Defense
+2,3
+EPIC
+If an incoming hit would deal at least 50% of your health, multiply its damage by 0.9.
+Blaze Slayer VII
+0
+Blaze Slayer VII
+12
+25000000
+
+19
+Soulflow Supercell
+Soulflow
+0
+LEGENDARY
+Ability: Overflow Mana. When leaving combat, convert up to 4 soulflow into 600 overflow mana.
+Enderman Slayer VII
+0
+Enderman Slayer VII
+16
+55000000
+
+20
+Hegemony Artifact
+Magic Power
+0
+LEGENDARY
+Counts for twice the Magical Power in your Accessory Bag.
+N/A
+0
+Dark Auction (Mayor Scorpius in Office)
+16
+2500000
