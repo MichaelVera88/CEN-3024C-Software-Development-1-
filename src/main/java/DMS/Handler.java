@@ -1,19 +1,24 @@
 package DMS;
 import java.io.*;
+import java.net.URISyntaxException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Handler
 {
-    public static void main(String[] args)
-    {
-        String dbPath = "jdbc:sqlite::resource:accessories.db";
+    public static void main(String[] args) throws URISyntaxException {
+        Path jarDir = Paths.get(Handler.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent();
+        Path dbPath = jarDir.resolve("Accessories.db");
 
-        try (Connection conn = DriverManager.getConnection(dbPath))
+        String path = "jdbc:sqlite:" + dbPath.toAbsolutePath();
+
+        try (Connection conn = DriverManager.getConnection(path))
         {
 
-            String sql = "SELECT * FROM Accessories";
+            String sql = "SELECT * FROM ACCESSORIES";
             PreparedStatement statement = conn.prepareStatement(sql);
             ResultSet rs = statement.executeQuery();
 
