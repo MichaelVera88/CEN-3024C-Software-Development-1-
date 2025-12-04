@@ -1,5 +1,6 @@
 package DMS;
 import java.io.*;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,71 +8,58 @@ public class Handler
 {
     public static void main(String[] args)
     {
-        try
-        {
-            InputStream textFile = Handler.class.getResourceAsStream("/Accessories.txt");
+        String dbPath = "jdbc:sqlite::resource:accessories.db";
 
-            if (textFile == null)
-            {
-                System.out.println("File Not Found");
-                return;
-            }
+        try (Connection conn = DriverManager.getConnection(dbPath))
+        {
+
+            String sql = "SELECT * FROM Accessories";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
 
             List<Accessory> accessoryList = new ArrayList<>();
-            List<Accessory> accessories = loadData(textFile);
+            List<Accessory> accessories = loadData(rs);
 
             Inventory playerInventory = new Inventory(accessoryList, accessories);
             GUI gui = new GUI(playerInventory);
-        } catch (IOException e)
+        } catch (SQLException e)
         {
-            System.err.println("Error reading file: " + e.getMessage());
+            System.err.println("Error reading database: " + e.getMessage());
         }
     }
 
-    public static List<Accessory> loadData(InputStream textFile) throws IOException
-    {
+    public static List<Accessory> loadData(ResultSet rs) throws SQLException {
         List<Accessory> accessories = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(textFile)))
-        {
-            String stringID;
-            while ((stringID = br.readLine()) != null)
+        while (rs.next()) {
+
+            int ID = rs.getInt("ID");
+            String name = rs.getString("Name");
+
+            String stringStatNames = rs.getString("StringArray");
+            String stringStatVals = rs.getString("IntegerArray");
+
+            String rarity = rs.getString("Rarity");
+            String description = rs.getString("Description");
+            String requirements = rs.getString("Requirements");
+
+            int upgrade = rs.getInt("Upgrade");
+            String source = rs.getString("Sources");
+
+            int mp = rs.getInt("MagicPower");
+            int price = rs.getInt("Price");
+
+            String[] statNames = stringStatNames.split(",");
+            String[] arrayStatVals = stringStatVals.split(",");
+
+            int[] statVals = new int[arrayStatVals.length];
+            for (int i = 0; i < arrayStatVals.length; i++)
             {
-                if (stringID.trim().isEmpty())
-                {
-                    continue;
-                }
-
-                String name = br.readLine();
-                String stringStatNames = br.readLine();
-                String stringStatVals = br.readLine();
-                String rarity = br.readLine();
-                String description = br.readLine();
-                String requirements = br.readLine();
-                String stringUpgrade = br.readLine();
-                String source = br.readLine();
-                String stringMp = br.readLine();
-                String stringPrice = br.readLine();
-
-                int ID = Integer.parseInt(stringID);
-                int upgrade =  Integer.parseInt(stringUpgrade);
-                int mp = Integer.parseInt(stringMp);
-                int price = Integer.parseInt(stringPrice);
-
-                String[] statNames = stringStatNames.split(",");
-                String[] arrayStatVals = stringStatVals.split(",");
-                int[] statVals = new int[arrayStatVals.length];
-                for (int i = 0; i < arrayStatVals.length; i++)
-                {
-                    statVals[i] = Integer.parseInt(arrayStatVals[i].trim());
-                }
-
-                accessories.add(new Accessory(ID, name, rarity, statNames, statVals, description, requirements, upgrade, source, mp, price));
+                statVals[i] = Integer.parseInt(arrayStatVals[i].trim());
             }
-        } catch (IOException e)
-        {
-            System.out.println("Error reading file: " + e.getMessage());
-        }
+
+            accessories.add(new Accessory(ID, name, rarity, statNames, statVals, description, requirements, upgrade, source, mp, price));
+            }
         return accessories;
     }
 }
